@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
+    public TextMesh scoreGT;
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Find a reference to the ScoreCounter GameObject
+        GameObject scoreGO = GameObject.Find("ScoreCounter"); // 2
+                                                              // Get the GUIText Component of that GameObject
+        scoreGT = scoreGO.GetComponent<TextMesh>(); // 3
+                                                    // Set the starting number of points to 0
+        scoreGT.text = "0";
     }
 
     // Update is called once per frame
@@ -33,6 +39,19 @@ public class Basket : MonoBehaviour
         {
             Destroy(collidedWith);
         }
-    }
+        // Parse the text of the scoreGT into an int
+        int score = int.Parse(scoreGT.text); // 4
+                                             // Add points for catching the apple
+        score += 100;
+        // Convert the score back to a string and display it
+        scoreGT.text = score.ToString();
+        // Track the high score
+        if (score > HighScore.score)
+        {
+            HighScore.score = score;
+        }
 
+    }
 }
+
+
