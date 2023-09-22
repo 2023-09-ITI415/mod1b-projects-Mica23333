@@ -5,17 +5,7 @@ using UnityEngine.UIElements;
 
 public class AppleTree : MonoBehaviour
 {
-    public static float bottomY = -20f;
-    void Update()
-    {
-        if (transform.position.y < bottomY)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-
-[Header("Set in Inspector")]
+    [Header("Set in Inspector")]
 
     // Prefab for instantiating apples
     public GameObject applePrefab;
@@ -32,7 +22,7 @@ public class AppleTree : MonoBehaviour
     // Rate at which Apples will be instantiated
     public float secondsBetweenAppleDrop = 1f;
 
-    
+
     void Start()
     // Dropping apples every second
     {
@@ -43,19 +33,16 @@ public class AppleTree : MonoBehaviour
         GameObject apple = Instantiate(applePrefab) as GameObject;
         apple.transform.position = transform.position;
     }
-   
 
 
-// Update is called once per frame
-void Update()
+
+    // Update is called once per frame
+    void Update()
     {
         // Basic Movement
         Vector3 pos = transform.position;
         pos.x += speed * Time.deltaTime;
-        pos.x += 1.0f * 0.01f;
-        pos.x += 0.01f;
         transform.position = pos;
-
         // Changing Direction
         if (pos.x < -leftAndRightEdge)
         {
@@ -73,5 +60,8 @@ void Update()
         {
             speed *= -1; // Change direction
         }
-     }
+    }
 }
+    
+ 
+
