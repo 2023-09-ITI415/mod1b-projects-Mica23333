@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Basket : MonoBehaviour
 {
-    public TextMesh scoreGT;
+    public TextMeshProUGUI scoreGT;
     // Start is called before the first frame update
     void Start()
     {
         // Find a reference to the ScoreCounter GameObject
         GameObject scoreGO = GameObject.Find("ScoreCounter"); // 2
                                                               // Get the GUIText Component of that GameObject
-        scoreGT = scoreGO.GetComponent<TextMesh>(); // 3
+        scoreGT = scoreGO.GetComponent<TextMeshProUGUI>(); // 3
                                                     // Set the starting number of points to 0
         scoreGT.text = "0";
     }

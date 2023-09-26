@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class HighScore : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class HighScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextMesh gt = this.GetComponent<TextMesh>();
+        TextMeshProUGUI gt = this.GetComponent<TextMeshProUGUI>();
         gt.text = "High Score: " + score;
         // Update ApplePickerHighScore in PlayerPrefs if necessary
         if (score > PlayerPrefs.GetInt("ApplePickerHighScore"))
