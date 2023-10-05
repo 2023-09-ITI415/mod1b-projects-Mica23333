@@ -17,12 +17,12 @@ public class FollowCam : MonoBehaviour
     {
         S = this;
         camZ = this.transform.position.z;
-     }
-    
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -40,4 +40,7 @@ public class FollowCam : MonoBehaviour
         // Set the camera to the destination
         transform.position = destination;
     }
-}
+
+
+                }
+           

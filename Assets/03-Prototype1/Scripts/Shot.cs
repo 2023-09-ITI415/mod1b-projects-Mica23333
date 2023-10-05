@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
-    public GameObject LaunchPoint;
+    public GameObject launchPoint;
     void Awake()
     {
         Transform launchPointTrans = transform.Find("LaunchPoint"); 
-        LaunchPoint = launchPointTrans.gameObject;
-        LaunchPoint.SetActive(false); 
+        launchPoint = launchPointTrans.gameObject;
+        launchPoint.SetActive(false); 
     }
 
     void OnMouseEnter()
     {
         //print("Shot:OnMouseEnter()");//
-        LaunchPoint.SetActive(true);
+        launchPoint.SetActive(true);
     }
     void OnMouseExit()
     {
         //print("Shot:OnMouseExit()");//
-        LaunchPoint.SetActive(false);
+        launchPoint.SetActive(false);
     }
 // Start is called before the first frame update
 void Start()
