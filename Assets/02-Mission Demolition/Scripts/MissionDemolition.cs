@@ -15,9 +15,9 @@ public class MissionDemolition : MonoBehaviour
 {
     static private MissionDemolition S; // a private Singleton
     [Header("Set in Inspector")]
-    public TextMeshPro uitLevel; // The UIText_Level Text
-    public TextMeshPro uitShots; // The UIText_Shots Text
-    public TextMeshPro uitButton; // The Text on UIButton_View
+    public TextMeshProUGUI uitLevel; // The UIText_Level Text
+    public TextMeshProUGUI uitShots; // The UIText_Shots Text
+    public TextMeshProUGUI uitButton; // The Text on UIButton_View
     public Vector3 castlePos; // The place to put castles
     public GameObject[] castles; // An array of the castles
 
@@ -25,7 +25,7 @@ public class MissionDemolition : MonoBehaviour
     public int level; // The current level
     public int levelMax; // The number of levels
     public int shotsTaken;
-    public GameObject castle; // The current castle
+    public GameObject castle = null; // The current castle
     public GameMode mode = GameMode.idle;
     public string showing = "Show Slingshot"; // FollowCam mode
 

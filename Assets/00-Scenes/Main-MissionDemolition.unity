@@ -899,7 +899,7 @@ MonoBehaviour:
   easing: 0.05
   minXY: {x: 0, y: 0}
   _____________________________: 0
-  POI: {fileID: 0}
+  POI: {fileID: 7209757430974709956, guid: 4e9873e82731a1a41b7068290e211961, type: 3}
   camZ: -10
 --- !u!114 &792234110
 MonoBehaviour:
@@ -932,15 +932,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9b53f36e65eb44781ee0b74f8051cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uitLevel: {fileID: 0}
-  uitShots: {fileID: 0}
-  uitButton: {fileID: 0}
+  uitLevel: {fileID: 328682189}
+  uitShots: {fileID: 705187455}
+  uitButton: {fileID: 1726867137}
   castlePos: {x: 50, y: -9.5, z: 0}
-  castles: []
+  castles:
+  - {fileID: 5705703804987209912, guid: c40147a23caa2064cb00eba19440df4e, type: 3}
+  - {fileID: 5705703804987209912, guid: 39b2ac1d9a091f74abe94e9dbd3cda1e, type: 3}
   level: 0
   levelMax: 0
   shotsTaken: 0
-  castle: {fileID: 5705703804987209912, guid: c40147a23caa2064cb00eba19440df4e, type: 3}
+  castle: {fileID: 0}
   mode: 0
   showing: Show Slingshot
 --- !u!1 &1086900382
