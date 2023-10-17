@@ -10,7 +10,7 @@ public class DroppingCloud : MonoBehaviour
     public float speed = 1f;
     public float leftAndRightEdge = 10f;
     public float chanceToChangeDirections = 0.1f;
-    public float secondsBetweenDroppingDrops = 0.6f;
+    public float secondsBetweenDroppingDrops = 1f;
 
 
 
@@ -21,8 +21,8 @@ public class DroppingCloud : MonoBehaviour
     }
     void DropDropping()
     {
-        GameObject apple = Instantiate<GameObject>(DroppingPrefab); // c
-        apple.transform.position = transform.position; // d
+        GameObject Dropping= Instantiate<GameObject>(DroppingPrefab); // c
+        Dropping.transform.position = transform.position; // d
         Invoke("DropDropping", secondsBetweenDroppingDrops); // e
     }
 

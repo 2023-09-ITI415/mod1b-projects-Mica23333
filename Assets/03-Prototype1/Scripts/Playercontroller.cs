@@ -12,15 +12,19 @@ public class PlayerController : MonoBehaviour
     // Movement along X and Y axes.
     private float movementX;
     private float movementY;
+    private Vector3 customGravity = new Vector3(0, 0, -9.81f);
+
 
     // Speed at which the player moves.
-    public float speed = 0;
+    public float LeftandRightForce = 10f;
+    public int force = 2;
 
     // Start is called before the first frame update.
     void Start()
     {
         // Get and store the Rigidbody component attached to the player.
         rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
     }
 
     // This function is called when a move input is detected.
@@ -37,23 +41,34 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate is called once per fixed frame-rate frame.
     private void FixedUpdate()
     {
-        // Create a 3D movement vector using the X and Y inputs.
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-
-        // Apply force to the Rigidbody to move the player.
-        rb.AddForce(movement * speed);
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        // Check if the object the player collided with has the "PickUp" tag.
-        if (other.gameObject.CompareTag("PickUp"))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            // Deactivate the collided object (making it disappear).
-            other.gameObject.SetActive(false);
+            rb.AddForce(transform.forward * force,ForceMode.Impulse);
         }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            rb.AddForce(-transform.right * LeftandRightForce);
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            rb.AddForce(transform.right * LeftandRightForce);
+        }
+        rb.AddForce(customGravity * rb.mass); 
     }
 
-}
+
+        void OnTriggerEnter(Collider other)
+        {
+            // Check if the object the player collided with has the "PickUp" tag.
+            if (other.gameObject.CompareTag("PickUp"))
+            {
+                // Deactivate the collided object (making it disappear).
+                other.gameObject.SetActive(false);
+            }
+        }
+
+    }
+
 
 
 
