@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Apple
+  - Projectile
+  - PickUp
+  - Dropping
   layers:
   - Default
   - TransparentFX
@@ -13,13 +17,13 @@ TagManager:
   - UI
   - 
   - 
+  - AppleTree
+  - Apple
+  - Basket
+  - Cloud
+  - Dropping
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Stair
   - 
   - 
   - 

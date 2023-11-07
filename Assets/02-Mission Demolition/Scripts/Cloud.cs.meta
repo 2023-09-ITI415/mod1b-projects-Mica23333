@@ -3,7 +3,8 @@ guid: f77366ad13eab45718fd2154e19ffa32
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cloudSphere: {fileID: 4754893085036718534, guid: 057584d6e0e0af34dbd9124edf23c9a2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
